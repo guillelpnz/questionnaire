@@ -54,4 +54,11 @@ public class UsersController : ControllerBase
         _userService.Delete(id);
         return Ok(new { message = "User deleted" });
     }
+
+    [HttpGet("/login/{email}")]
+    public IActionResult GetByEmail(string email)
+    {
+        var userId = _userService.GetByEmail(email);
+        return Ok(userId);
+    }
 }

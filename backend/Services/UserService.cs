@@ -10,6 +10,8 @@ public interface IUserService
 {
     IEnumerable<User> GetAll();
     User GetById(int id);
+
+    int GetByEmail(string email);
     void Create(CreateUserRequest model);
     void Update(int id, UpdateUserRequest model);
     void Delete(int id);
@@ -71,6 +73,11 @@ public class UserService : IUserService
         _mapper.Map(model, user);
         _context.Users.Update(user);
         _context.SaveChanges();
+    }
+
+    public int GetByEmail(string email)
+    {
+        return _context.Users.Where(x => x.Email == email).FirstOrDefault().UserId;
     }
 
     public void Delete(int id)
