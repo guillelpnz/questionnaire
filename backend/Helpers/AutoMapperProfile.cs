@@ -3,16 +3,18 @@ namespace WebApi.Helpers;
 using AutoMapper;
 using WebApi.Entities;
 using WebApi.Models.Users;
-
+using WebApi.Models.Question;
 public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
         // CreateRequest -> User
-        CreateMap<CreateRequest, User>();
+        CreateMap<CreateUserRequest, User>();
+
+        CreateMap<CreateQuestionRequest, Question>();
 
         // UpdateRequest -> User
-        CreateMap<UpdateRequest, User>()
+        CreateMap<UpdateUserRequest, User>()
             .ForAllMembers(x => x.Condition(
                 (src, dest, prop) =>
                 {
@@ -26,5 +28,7 @@ public class AutoMapperProfile : Profile
                     return true;
                 }
             ));
+
+        CreateMap<UpdateQuestionRequest, Question>();
     }
 }

@@ -23,6 +23,7 @@ var builder = WebApplication.CreateBuilder(args);
 
     // configure DI for application services
     services.AddScoped<IUserService, UserService>();
+    services.AddScoped<IQuestionService, QuestionService>();
 }
 
 var app = builder.Build();

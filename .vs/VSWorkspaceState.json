@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend",
+    "\\backend\\Controllers",
+    "\\backend\\Models",
+    "\\backend\\Models\\Users"
   ],
-  "SelectedNode": "\\C:\\Users\\Guillermo.Tapia\\Source\\Repos\\dotnet-6-crud-api",
+  "SelectedNode": "\\backend\\WebApi.csproj",
   "PreviewInSolutionExplorer": false
 }

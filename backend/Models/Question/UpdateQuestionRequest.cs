@@ -1,9 +1,9 @@
-namespace WebApi.Models.Users;
+﻿namespace WebApi.Models.Question;
 
 using System.ComponentModel.DataAnnotations;
 using WebApi.Entities;
 
-public class UpdateRequest
+public class UpdateQuestionRequest
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -26,7 +26,7 @@ public class UpdateRequest
 
     private string _confirmPassword;
     [Compare("Password")]
-    public string ConfirmPassword 
+    public string ConfirmPassword
     {
         get => _confirmPassword;
         set => _confirmPassword = replaceEmptyWithNull(value);
