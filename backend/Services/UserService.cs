@@ -77,7 +77,8 @@ public class UserService : IUserService
 
     public int GetByEmail(string email)
     {
-        return _context.Users.Where(x => x.Email == email).FirstOrDefault().UserId;
+        List<User> users = _context.Users.Where(x => x.Email == email).ToList();
+        return users[0] != null ? users[0].UserId : -1;
     }
 
     public void Delete(int id)
