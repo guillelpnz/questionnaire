@@ -1,0 +1,63 @@
+[
+    {
+        "Label": "From 1 to 10 how much do you know about Blockchain?",
+        "AnswerType": "Numeric",
+        "AnswerContent": "",
+        "Choices": ""
+    },
+    {
+        "Label": "From 1 to 10 how interested are you about Blockchain?",
+        "AnswerType": "Numeric",
+        "AnswerContent": "",
+        "Choices": ""
+    },
+    {
+        "Label": "Do you know about Blockchain?",
+        "AnswerType": "TwoOptions",
+        "AnswerContent": "",
+        "Choices": "Yes, No"
+    },
+    {
+        "Label": "How much do you know about Web3?",
+        "AnswerType": "MultipleOptions",
+        "AnswerContent": "",
+        "Choices": "A lot, Regular user, I have heard about it, Nothing"
+    },
+    {
+        "Label": "From 1 to 10 how much do you know about Ethereum?",
+        "AnswerType": "Numeric",
+        "AnswerContent": "",
+        "Choices": ""
+    },
+    {
+        "Label": "Do you know what Mining means?",
+        "AnswerType": "TwoOptions",
+        "AnswerContent": "",
+        "Choices": "Yes, No"
+    },
+    {
+        "Label": "From 1 to 10 how much do you know about cryptocurrencies?",
+        "AnswerType": "Numeric",
+        "AnswerContent": "",
+        "Choices": ""
+    },
+    {
+        "Label": "From 1 to 10 how much do you know about Bitcoin?",
+        "AnswerType": "Numeric",
+        "AnswerContent": "",
+        "Choices": ""
+    },
+    {
+        "Label": "Have you ever heard about Smart contracts?",
+        "AnswerType": "Numeric",
+        "AnswerContent": "",
+        "Choices": "Yes, No"
+    },
+    {
+        "Label": "From 1 to 10 how much do you know about Smart contracts?",
+        "AnswerType": "Numeric",
+        "AnswerContent": "",
+        "Choices": ""
+    }
+]
+

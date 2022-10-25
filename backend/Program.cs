@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using WebApi.Helpers;
 using WebApi.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
     var env = builder.Environment;
  
     services.AddDbContext<DataContext>();
+    services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EFGetStarted.ConsoleApp.NewDb;Trusted_Connection=True;"));
     services.AddCors();
     services.AddControllers().AddJsonOptions(x =>
     {
