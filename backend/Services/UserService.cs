@@ -11,7 +11,7 @@ public interface IUserService
     IEnumerable<User> GetAll();
     User GetById(int id);
 
-    int GetByEmail(string email);
+    int Login(LoginModel model);
     void Create(CreateUserRequest model);
     void Update(int id, UpdateUserRequest model);
     void Delete(int id);
@@ -50,7 +50,7 @@ public class UserService : IUserService
         var user = _mapper.Map<User>(model);
 
         // hash password
-        user.PasswordHash = BCrypt.HashPassword(model.Password);
+        //user.Password = BCrypt.HashPassword(model.Password);
 
         // save user
         _context.Users.Add(user);
@@ -67,7 +67,7 @@ public class UserService : IUserService
 
         // hash password if it was entered
         if (!string.IsNullOrEmpty(model.Password))
-            user.PasswordHash = BCrypt.HashPassword(model.Password);
+            user.Password = BCrypt.HashPassword(model.Password);
 
         // copy model to user and save
         _mapper.Map(model, user);
@@ -75,10 +75,11 @@ public class UserService : IUserService
         _context.SaveChanges();
     }
 
-    public int GetByEmail(string email)
+    public int Login(LoginModel model)
     {
-        List<User> users = _context.Users.Where(x => x.Email == email).ToList();
-        return users[0] != null ? users[0].UserId : -1;
+        List<User> users = _context.Users.Where(x => x.Email == model.Email && x.Password == model.Password).ToList();
+        Console.WriteLine(users);
+        return users.Count > 0 ? users[0].UserId : -1;
     }
 
     public void Delete(int id)

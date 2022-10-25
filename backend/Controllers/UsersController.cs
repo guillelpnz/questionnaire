@@ -55,10 +55,10 @@ public class UsersController : ControllerBase
         return Ok(new { message = "User deleted" });
     }
 
-    [HttpGet("/login/{email}")]
-    public IActionResult GetByEmail(string email)
+    [HttpPost("/login")]
+    public IActionResult Login(LoginModel model)
     {
-        var userId = _userService.GetByEmail(email);
+        var userId = _userService.Login(model);
         return Ok(userId);
     }
 }
