@@ -26,10 +26,17 @@ namespace WebApi.Helpers
             {
                 var question = item as Question;
                 modelBuilder.Entity<Question>().HasData(
-                    new Question() { QuestionId = i, Label = question.Label, AnswerContent = question.AnswerContent, AnswerType = question.AnswerType, Choices = question.Choices }
+                    new Question() { QuestionId = i, Label = question.Label, AnswerContent = question.AnswerContent, AnswerType = question.AnswerType, Choices = question.Choices, QuestionnaireId = 1, UserId = 1 }
                 );
                 i++;
             }
+
+            modelBuilder.Entity<Questionnaire>().HasData(
+                new Questionnaire()
+                {
+                    QuestionnaireId = 1, UserId = 1
+                }
+                );
         }
     }
 }

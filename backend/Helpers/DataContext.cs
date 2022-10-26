@@ -27,4 +27,6 @@ public class DataContext : DbContext
     public DbSet<User> Users { get; set; }
 
     public DbSet<Question> Questions { get; set; }
+
+    public DbSet<Questionnaire> Questionnaire { get; set; }
 }
