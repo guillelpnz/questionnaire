@@ -1,0 +1,10 @@
+.regist-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.errmsg {
+
+    color:lightcoral;
+
+}
